@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include knowledge_base *.css
+recursive-include knowledge_base *.csv
+recursive-include knowledge_base *.html
+recursive-include knowledge_base *.ico
+recursive-include knowledge_base *.js
+recursive-include knowledge_base *.json
+recursive-include knowledge_base *.md
+recursive-include knowledge_base *.png
+recursive-include knowledge_base *.py
+recursive-include knowledge_base *.svg
+recursive-include knowledge_base *.txt
+recursive-exclude knowledge_base *.pyc

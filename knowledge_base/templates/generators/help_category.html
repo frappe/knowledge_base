@@ -1,0 +1,14 @@
+{% block content %}
+<div>
+	{% for article in articles %}
+	<div>
+		<span class="pull-right label label-{{ get_level_class(article.level) }}">{{ article.level }}</span>
+		<h4 style="margin-bottom: 0px;">
+			<a href="/{{ article.parent_website_route }}/{{ article.page_name }}">{{ article.title }}</a></h4>
+		<div class="text-muted small">
+			By {{ article.author }} on {{ frappe.format_date(article.creation) }}</div>
+	</div>
+	<hr style="margin: 10px 0px">
+	{% endfor %}
+</div>
+{% endblock %}
