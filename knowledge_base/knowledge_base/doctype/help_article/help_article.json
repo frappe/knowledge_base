@@ -153,6 +153,16 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "unique": 0
+  }, 
+  {
+   "default": "user", 
+   "fieldname": "owner", 
+   "fieldtype": "Link", 
+   "label": "Owner", 
+   "options": "User", 
+   "permlevel": 0, 
+   "precision": "", 
+   "read_only": 0
   }
  ], 
  "hide_heading": 0, 
@@ -163,7 +173,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2014-10-30 16:49:08.944301", 
+ "modified": "2014-10-31 15:49:57.778649", 
  "modified_by": "Administrator", 
  "module": "Knowledge Base", 
  "name": "Help Article", 
@@ -186,6 +196,14 @@
    "role": "Knowledge Base Editor", 
    "set_user_permissions": 0, 
    "submit": 0, 
+   "write": 1
+  }, 
+  {
+   "apply_user_permissions": 1, 
+   "create": 1, 
+   "permlevel": 0, 
+   "read": 1, 
+   "role": "Knowledge Base Contributor", 
    "write": 1
   }
  ], 
