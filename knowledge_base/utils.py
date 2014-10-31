@@ -18,4 +18,8 @@ def get_category_sidebar():
 			where ifnull(published,0)=1 and help_articles > 0
 			order by help_articles desc""", as_dict=True)
 
-	return frappe.cache().get_value("kb:category_sidebar", _get)
+	return frappe.cache().get_value("knowledge_base:category_sidebar", _get)
+
+def clear_cache():
+	frappe.cache().delete_value("knowledge_base:category_sidebar")
+	frappe.cache().delete_value("knowledge_base:faq")

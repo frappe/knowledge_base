@@ -2,7 +2,7 @@
  "allow_copy": 0, 
  "allow_import": 0, 
  "allow_rename": 0, 
- "autoname": "field:category_name", 
+ "autoname": "", 
  "creation": "2014-10-30 14:23:30.958074", 
  "custom": 0, 
  "docstatus": 0, 
@@ -44,7 +44,7 @@
    "print_hide": 0, 
    "read_only": 0, 
    "report_hide": 0, 
-   "reqd": 1, 
+   "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
    "unique": 0
@@ -102,11 +102,11 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2014-10-30 15:05:50.179669", 
+ "modified": "2014-10-31 15:10:45.533327", 
  "modified_by": "Administrator", 
  "module": "Knowledge Base", 
  "name": "Help Category", 
- "name_case": "", 
+ "name_case": "Title Case", 
  "owner": "Administrator", 
  "permissions": [
   {

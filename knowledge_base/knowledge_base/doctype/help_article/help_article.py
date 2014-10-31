@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import frappe
 from frappe.website.website_generator import WebsiteGenerator
 from frappe.website.utils import get_comment_list
-from knowledge_base.utils import get_level_class, get_category_sidebar
+from knowledge_base.utils import get_level_class, get_category_sidebar, clear_cache
 
 class HelpArticle(WebsiteGenerator):
 	condition_field = "published"
@@ -16,7 +16,7 @@ class HelpArticle(WebsiteGenerator):
 	def on_update(self):
 		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s""", self.category)[0][0]
 		frappe.db.set_value("Help Category", self.category, "help_articles", cnt)
-		frappe.cache().delete_value("kb:category_sidebar")
+		clear_cache()
 
 	def get_context(self, context):
 		context.login_required = True
