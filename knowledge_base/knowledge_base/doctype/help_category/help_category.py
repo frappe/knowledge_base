@@ -26,3 +26,4 @@ class HelpCategory(WebsiteGenerator):
 
 	def on_update(self):
 		clear_cache()
+		super(HelpCategory, self).on_update()

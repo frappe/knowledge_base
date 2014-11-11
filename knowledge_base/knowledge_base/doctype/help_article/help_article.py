@@ -17,6 +17,7 @@ class HelpArticle(WebsiteGenerator):
 		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s""", self.category)[0][0]
 		frappe.db.set_value("Help Category", self.category, "help_articles", cnt)
 		clear_cache()
+		super(HelpArticle, self).on_update()
 
 	def get_context(self, context):
 		context.login_required = True
