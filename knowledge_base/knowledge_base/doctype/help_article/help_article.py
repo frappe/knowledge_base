@@ -14,7 +14,7 @@ class HelpArticle(WebsiteGenerator):
 	page_title_field = "title"
 
 	def on_update(self):
-		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s""", self.category)[0][0]
+		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s and ifnull(published,0)=1""", self.category)[0][0]
 		frappe.db.set_value("Help Category", self.category, "help_articles", cnt)
 		clear_cache()
 		super(HelpArticle, self).on_update()
