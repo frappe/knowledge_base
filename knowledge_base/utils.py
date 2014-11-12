@@ -23,3 +23,6 @@ def get_category_sidebar():
 def clear_cache():
 	frappe.cache().delete_value("knowledge_base:category_sidebar")
 	frappe.cache().delete_value("knowledge_base:faq")
+
+	from frappe.website.render import clear_cache
+	clear_cache()
