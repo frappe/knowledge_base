@@ -20,7 +20,7 @@ class HelpArticle(WebsiteGenerator):
 
 	def update_category(self):
 		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s and ifnull(published,0)=1""", self.category)[0][0]
-		cat = frappe.doc("Help Category", self.category)
+		cat = frappe.get_doc("Help Category", self.category)
 		cat.help_articles = cnt
 		cat.save()
 
