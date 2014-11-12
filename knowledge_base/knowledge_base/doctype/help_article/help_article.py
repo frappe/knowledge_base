@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
-import frappe
+import frappe, re, markdown2
 from frappe.website.website_generator import WebsiteGenerator
 from frappe.website.utils import get_comment_list
 from knowledge_base.utils import get_level_class, get_category_sidebar, clear_cache
@@ -20,6 +20,8 @@ class HelpArticle(WebsiteGenerator):
 		super(HelpArticle, self).on_update()
 
 	def get_context(self, context):
+		if not re.search("<p[\s/]*>|<br[\s/]*>", context.content):
+			context.content = markdown2.markdown(context.content)
 		context.login_required = True
 		context.level_class = get_level_class(self.level)
 		context.comment_list = get_comment_list(self.doctype, self.name)
