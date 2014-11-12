@@ -14,10 +14,15 @@ class HelpArticle(WebsiteGenerator):
 	page_title_field = "title"
 
 	def on_update(self):
-		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s and ifnull(published,0)=1""", self.category)[0][0]
-		frappe.db.set_value("Help Category", self.category, "help_articles", cnt)
+		self.update_category()
 		clear_cache()
 		super(HelpArticle, self).on_update()
+
+	def update_category(self):
+		cnt = frappe.db.sql("""select count(*) from `tabHelp Article` where category=%s and ifnull(published,0)=1""", self.category)[0][0]
+		cat = frappe.doc("Help Category", self.category)
+		cat.help_articles = cnt
+		cat.save()
 
 	def get_context(self, context):
 		if not re.search("<p[\s/]*>|<br[\s/]*>", context.content):
