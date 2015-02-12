@@ -1,0 +1,20 @@
+{% block title %}Knowledge Base{% endblock %}
+
+{% block content %}
+<!-- no-header -->
+
+    {% if not faq %}
+    <br>
+    <p class="text-muted">{{ _("Frequently Asked Questions not set.") }}</p>
+    {% endif %}
+    {% for article in faq %}
+    <div class="row web-list-item">
+        <div class="col-xs-12">
+    		<h3><a href="{{ article.parent_website_route }}/{{ article.page_name }}">
+                {{ article.title }}</a></h3>
+    		<div class="text-muted small">{{ article.category }} | {{ article.level }}</div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

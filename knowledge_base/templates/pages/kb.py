@@ -4,6 +4,7 @@ from knowledge_base.utils import get_level_class, get_category_sidebar
 def get_context(context):
 	context.faq = get_faq()
 	context.children = get_category_sidebar()
+	context.parents = []
 	context.get_level_class = get_level_class
 
 def get_faq():

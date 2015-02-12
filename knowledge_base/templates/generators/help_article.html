@@ -1,13 +1,7 @@
 {% block content %}
 <article class="help-content" itemscope itemtype="http://schema.org/BlogPost">
-	<div class="row" style="margin-bottom: 15px;">
-		<div class="col-md-6 text-muted">
-			By {{ author }} on {{ frappe.format_date(creation) }}
-		</div>
-		<div class="col-md-6 text-right">
-			<span class="label label-{{ level_class }}">{{ level }}</span>
-		</div>
-	</div>
+    <h6 class='text-muted'>By {{ author }} on {{ frappe.format_date(creation) }}</h6>
+	<p><span class="label label-{{ level_class }} small">{{ level }}</span></p>
 	<div itemprop="articleBody">
 	{{ content }}
 	</div>
