@@ -9,10 +9,12 @@ from frappe.website.utils import get_comment_list
 from knowledge_base.utils import get_level_class, get_category_sidebar, clear_cache
 
 class HelpArticle(WebsiteGenerator):
-	condition_field = "published"
-	template = "templates/generators/help_article.html"
-	parent_website_route_field = "category"
-	page_title_field = "title"
+	website = frappe._dict(
+		condition_field = "published",
+		template = "templates/generators/help_article.html",
+		parent_website_route_field = "category",
+		page_title_field = "title"
+	)
 
 	def on_update(self):
 		self.update_category()

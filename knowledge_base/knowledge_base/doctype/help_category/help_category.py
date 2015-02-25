@@ -7,9 +7,11 @@ from frappe.website.website_generator import WebsiteGenerator
 from knowledge_base.utils import get_level_class, get_category_sidebar, clear_cache
 
 class HelpCategory(WebsiteGenerator):
-	condition_field = "published"
-	template = "templates/generators/help_category.html"
-	page_title_field = "category_name"
+	website = frappe._dict(
+		condition_field = "published",
+		template = "templates/generators/help_category.html",
+		page_title_field = "category_name"
+	)
 
 	def before_insert(self):
 		self.published=1
