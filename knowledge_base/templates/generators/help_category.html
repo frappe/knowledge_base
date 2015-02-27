@@ -6,7 +6,7 @@
 	{% for article in articles %}
 	<div class="row web-list-item">
         <div class="col-xs-12">
-    		<span class="pull-right label label-{{ get_level_class(article.level) }}">
+    		<span class="pull-right help-category-label label label-{{ get_level_class(article.level) }}">
                 {{ article.level }}</span>
     		<h3>
     			<a href="/{{ article.parent_website_route }}/{{ article.page_name }}">
@@ -17,4 +17,12 @@
 	</div>
 	{% endfor %}
 </div>
+{% endblock %}
+
+{% block style %}
+<style>
+.help-category-label {
+	margin-top: 15px;
+}
+</style>
 {% endblock %}
