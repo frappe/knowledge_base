@@ -7,7 +7,7 @@ setup(
     name='knowledge_base',
     version=version,
     description='Knowledge Base / Help Portal',
-    author='Web Notes',
+    author='Frappe',
     author_email='info@frappe.io',
     packages=find_packages(),
     zip_safe=False,

@@ -1,4 +1,4 @@
-# Copyright (c) 2013, Web Notes and Contributors
+# Copyright (c) 2013, Frappe and Contributors
 # See license.txt
 
 import frappe

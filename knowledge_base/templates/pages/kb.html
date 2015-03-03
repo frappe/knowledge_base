@@ -7,14 +7,30 @@
     <br>
     <p class="text-muted">{{ _("Frequently Asked Questions not set.") }}</p>
     {% endif %}
-    {% for article in faq %}
-    <div class="row web-list-item">
-        <div class="col-xs-12">
-    		<h3><a href="{{ article.parent_website_route }}/{{ article.page_name }}">
-                {{ article.title }}</a></h3>
-    		<div class="text-muted small">{{ article.category }} | {{ article.level }}</div>
-        </div>
-    </div>
-    {% endfor %}
+	<div class="website-list help-category-list">
+	    {% for article in faq %}
+	    <div class="row web-list-item">
+	        <div class="col-xs-12">
+	    		<span class="pull-right help-category-label label label-{{ get_level_class(article.level) }}">
+	                {{ article.level }}</span>
+	    		<h3><a href="{{ article.parent_website_route }}/{{ article.page_name }}">
+	                {{ article.title }}</a></h3>
+	    		<div class="text-muted small">{{ article.category }} | {{ article.level }}</div>
+	        </div>
+	    </div>
+	    {% endfor %}
+	</div>
 
+{% endblock %}
+
+{% block style %}
+<style>
+.help-category-label {
+	margin-top: 15px;
+}
+
+.page-content {
+	padding-bottom: 0px;
+}
+</style>
 {% endblock %}

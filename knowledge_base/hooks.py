@@ -1,6 +1,6 @@
 app_name = "knowledge_base"
 app_title = "Knowledge Base"
-app_publisher = "Web Notes"
+app_publisher = "Frappe"
 app_description = "Knowledge Base / Help Portal"
 app_icon = "icon-question-sign"
 app_color = "#4cd964"

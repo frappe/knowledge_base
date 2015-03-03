@@ -1,4 +1,4 @@
-# Copyright (c) 2013, Web Notes and contributors
+# Copyright (c) 2013, Frappe and contributors
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
@@ -35,6 +35,7 @@ class HelpArticle(WebsiteGenerator):
 		context.level_class = get_level_class(self.level)
 		context.comment_list = get_comment_list(self.doctype, self.name)
 		context.children = get_category_sidebar()
+		context.parents = self.get_parents(context)
 
 	def get_parents(self, context):
 		return [{"title":"Knowledge Base", "name":"kb"}] + super(HelpArticle, self).get_parents(context)
