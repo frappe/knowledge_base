@@ -1,20 +1,30 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+<!-- start-hero -->
+
+<div class="container padding-lg border-bottom">
+	<h1>
+		{{ _("Questions for {0}").format(title) }}
+	</h1>
+</div>
+
+<!-- end-hero -->
+
 <!-- no-header -->
 <div class="website-list help-category-list">
 	{% for article in articles %}
-	<div class="row web-list-item">
-        <div class="col-xs-12">
-    		<span class="pull-right help-category-label label label-{{ get_level_class(article.level) }}">
-                {{ article.level }}</span>
-    		<h3>
-    			<a href="/{{ article.parent_website_route }}/{{ article.page_name }}">
-                    {{ article.title }}</a></h3>
-    		<div class="text-muted small">
-    			By {{ article.author }} on {{ frappe.format_date(article.creation) }}</div>
-        </div>
-	</div>
+	<a class="no-decoration" href="/{{ article.parent_website_route }}/{{ article.page_name }}">
+		<div class="row web-list-item">
+	        <div class="col-sm-10">
+	    		<p>{{ article.title }}</p>
+	        </div>
+			<div class="col-sm-2 indicator-column">
+	    		<span class="help-category-label indicator {{ get_level_class(article.level) }}">
+	                {{ article.level }}</span>
+			</div>
+		</div>
+	</a>
 	{% endfor %}
 </div>
 {% endblock %}

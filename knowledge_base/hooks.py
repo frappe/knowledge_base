@@ -16,7 +16,7 @@ app_version = "0.0.1"
 # app_include_js = "/assets/knowledge_base/js/knowledge_base.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/knowledge_base/css/knowledge_base.css"
+web_include_css = "/assets/knowledge_base/css/knowledge_base.css"
 # web_include_js = "/assets/knowledge_base/js/knowledge_base.js"
 
 # Home Pages
@@ -35,6 +35,8 @@ app_version = "0.0.1"
 
 # automatically create page for each record of this doctype
 website_generators = ["Help Article", "Help Category"]
+
+website_clear_cache = "knowledge_base.utils.clear_website_cache"
 
 # Installation
 # ------------

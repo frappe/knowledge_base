@@ -23,7 +23,7 @@ class HelpCategory(WebsiteGenerator):
 		context.articles = frappe.get_all("Help Article", fields = ["title", "parent_website_route",
 			"page_name", "creation", "level", "likes", "author"], filters={"published":1, "category":self.name})
 		context.get_level_class = get_level_class
-		context.parents = [{"title":"Knowledge Base", "name":"kb"}]
+		context.parents = [{"title":"Knowledge Base", "name":"/kb"}]
 		context.children = get_category_sidebar()
 
 	def on_update(self):

@@ -38,4 +38,4 @@ class HelpArticle(WebsiteGenerator):
 		context.parents = self.get_parents(context)
 
 	def get_parents(self, context):
-		return [{"title":"Knowledge Base", "name":"kb"}] + super(HelpArticle, self).get_parents(context)
+		return [{"title":"Knowledge Base", "name":"/kb"}] + super(HelpArticle, self).get_parents(context)

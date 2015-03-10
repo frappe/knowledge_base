@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+	.indicator-column {
+		padding-top: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	.indicator-column {
+		margin-top: -10px;
+		margin-bottom: 5px;
+	}
+}
