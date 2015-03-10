@@ -10,3 +10,7 @@
 		margin-bottom: 5px;
 	}
 }
+
+.page-content-wrapper {
+	padding: 0px !important;
+}
