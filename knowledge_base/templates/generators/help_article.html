@@ -1,17 +1,20 @@
 {% block content %}
 <article class="help-content" itemscope itemtype="http://schema.org/BlogPost">
-    <h6 class='text-muted'>By {{ author }} on {{ frappe.format_date(creation) }}</h6>
-	<p>
-		<span class="indicator {{ level_class }}">{{ level }}</span>
-	</p>
-	<div itemprop="articleBody">
+	<div class="help-article-info">
+	    <h6 class='text-muted'>By {{ author }} on {{ frappe.format_date(creation) }}</h6>
+		<p>
+			<span class="indicator {{ level_class }}">{{ level }}</span>
+		</p>
+	</div>
+	<div class="longform" itemprop="articleBody">
 	{{ content }}
 	</div>
 	<!-- end blog content -->
 </article>
-<hr>
-<h3>Comments</h3>
-{% include 'templates/includes/comments/comments.html' %}
+<div class="help-article-comments">
+	<h3>Comments</h3>
+	{% include 'templates/includes/comments/comments.html' %}
+</div>
 <script>
 $(function() {
 	if(window.logged_in && getCookie("system_user")==="yes") {

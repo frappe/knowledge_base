@@ -33,6 +33,11 @@ web_include_css = "/assets/knowledge_base/css/knowledge_base.css"
 # Generators
 # ----------
 
+website_route_rules = [
+	{"from_route": "/kb", "to_route": "Help Article"},
+	{"from_route": "/kb/<category>", "to_route": "Help Article"}
+]
+
 # automatically create page for each record of this doctype
 website_generators = ["Help Article", "Help Category"]
 

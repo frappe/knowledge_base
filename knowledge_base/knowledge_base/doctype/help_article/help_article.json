@@ -173,7 +173,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-02-12 12:20:26.601558", 
+ "modified": "2015-03-12 19:01:51.943789", 
  "modified_by": "Administrator", 
  "module": "Knowledge Base", 
  "name": "Help Article", 
@@ -205,6 +205,11 @@
    "read": 1, 
    "role": "Knowledge Base Contributor", 
    "write": 1
+  }, 
+  {
+   "permlevel": 0, 
+   "read": 1, 
+   "role": "Guest"
   }
  ], 
  "read_only": 0, 
