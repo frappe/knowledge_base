@@ -42,25 +42,24 @@ class HelpArticle(WebsiteGenerator):
 	def get_parents(self, context):
 		return [{"title":"Knowledge Base", "name":"/kb"}] + super(HelpArticle, self).get_parents(context)
 
-	@staticmethod
-	def get_list_context(context=None):
-		list_context = frappe._dict(
-			title = _("Knowledge Base"),
-			template = "templates/includes/kb_list.html",
-			row_template = "templates/includes/kb_row.html",
-			get_level_class = get_level_class,
-			hide_filters = True,
-			filters = {"published": 1}
-		)
+def get_list_context(context=None):
+	list_context = frappe._dict(
+		title = _("Knowledge Base"),
+		template = "templates/includes/kb_list.html",
+		row_template = "templates/includes/kb_row.html",
+		get_level_class = get_level_class,
+		hide_filters = True,
+		filters = {"published": 1}
+	)
 
-		if frappe.local.form_dict.category:
-			list_context.category = frappe.db.get_value("Help Category",
-				{ "page_name": frappe.local.form_dict.category }) or frappe.local.form_dict.category
+	if frappe.local.form_dict.category:
+		list_context.category = frappe.db.get_value("Help Category",
+			{ "page_name": frappe.local.form_dict.category }) or frappe.local.form_dict.category
 
-			frappe.local.form_dict.category = list_context.category
+		frappe.local.form_dict.category = list_context.category
 
-		if frappe.local.form_dict.txt:
-			list_context.blog_subtitle = _('Filtered by "{0}"').format(frappe.local.form_dict.txt)
-		#
-		# list_context.update(frappe.get_doc("Blog Settings", "Blog Settings").as_dict())
-		return list_context
+	if frappe.local.form_dict.txt:
+		list_context.blog_subtitle = _('Filtered by "{0}"').format(frappe.local.form_dict.txt)
+	#
+	# list_context.update(frappe.get_doc("Blog Settings", "Blog Settings").as_dict())
+	return list_context
