@@ -1,6 +1,6 @@
 {% block title %}
 	{% if frappe.local.form_dict.category %}
-		{{ _("Questions for {0}").format(category) }}
+		{{ _("Knowledge Base: {0}").format(category) }}
 	{% else %}
 		{{ title }}
 	{% endif %}
@@ -13,6 +13,12 @@
 <div class="list-hero">
 	<h1>
 		{{ _("Questions for {0}").format(category) }}
+	</h1>
+</div>
+{% elif frappe.local.form_dict.txt %}
+<div class="list-hero">
+	<h1>
+		{{ _('Filtered by "{0}"').format(frappe.local.form_dict.txt) }}
 	</h1>
 </div>
 {% endif %}

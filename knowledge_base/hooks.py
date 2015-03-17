@@ -38,6 +38,10 @@ website_route_rules = [
 	{"from_route": "/kb/<category>", "to_route": "Help Article"}
 ]
 
+website_context = {
+	"include_search": 1
+}
+
 # automatically create page for each record of this doctype
 website_generators = ["Help Article", "Help Category"]
 
