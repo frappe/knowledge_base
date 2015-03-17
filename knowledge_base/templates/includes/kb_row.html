@@ -1,9 +1,10 @@
 {% set article = doc %}
-<div class="row web-list-item" href="/{{ article.parent_website_route }}/{{ article.page_name }}"
-    onclick="frappe.load_via_ajax(this.href)">
+<div class="row web-list-item">
     <div class="col-sm-9">
 		<p>
-			{{ article.title }}<br>
+			<a class="no-decoration" href="/{{ article.parent_website_route }}/{{ article.page_name }}">
+				{{ article.title }}
+			</a><br>
             <a class="grey text-muted small" href="{{ article.parent_website_route }}">{{ article.category }}</a>
 		</p>
     </div>
