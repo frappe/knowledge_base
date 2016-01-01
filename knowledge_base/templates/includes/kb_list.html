@@ -1,3 +1,5 @@
+{% extends "templates/web.html" %}
+
 {% block title %}
 	{% if frappe.local.form_dict.category %}
 		{{ _("Knowledge Base: {0}").format(category) }}
@@ -6,7 +8,7 @@
 	{% endif %}
 {% endblock %}
 
-{% block content %}
+{% block page_content %}
 <!-- no-header -->
 
 {% if frappe.local.form_dict.category %}
@@ -28,7 +30,9 @@
 </div>
 {% endblock %}
 
-{% block script %}{% include "templates/includes/list/list.js" %}{% endblock %}
+{% block script %}
+<script>{% include "templates/includes/list/list.js" %}</script>
+{% endblock %}
 
 {% block style %}
 <style>
