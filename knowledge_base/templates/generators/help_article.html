@@ -1,4 +1,6 @@
-{% block content %}
+{% extends "templates/web.html" %}
+
+{% block page_content %}
 <article class="help-content" itemscope itemtype="http://schema.org/BlogPost">
 	<div class="help-article-info">
 	    <h6 class='text-muted'>By {{ author }} on {{ frappe.format_date(creation) }}</h6>
@@ -16,14 +18,8 @@
 	{% include 'templates/includes/comments/comments.html' %}
 </div>
 <script>
-$(function() {
-	if(window.logged_in && getCookie("system_user")==="yes") {
-		frappe.has_permission("Help Article", "{{ name }}", "write", function(r) {
-			frappe.require("/assets/frappe/js/frappe/website/editable.js");
-			frappe.make_editable($('[itemprop="articleBody"]'), "Help Article", "{{ name }}", "content");
-		});
-	}
+frappe.ready(function() {
+    frappe.set_search_path("/kb");
 });
-frappe.set_search_path("/kb");
 </script>
 {% endblock %}
