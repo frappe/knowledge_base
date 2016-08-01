@@ -7,7 +7,6 @@ from frappe.website.website_generator import WebsiteGenerator
 from frappe.utils import is_markdown, markdown
 from frappe.website.utils import get_comment_list
 from knowledge_base.utils import get_level_class, get_category_sidebar, clear_cache
-from frappe.templates.pages.list import get_list
 from frappe import _
 
 class HelpArticle(WebsiteGenerator):
